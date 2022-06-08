@@ -63,7 +63,6 @@ C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\EduhomeMVC.
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\EduhomeMVC.TagHelpers.output.cache
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\EduhomeMVC.RazorCoreGenerate.cache
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Dashboard\Index.cshtml.g.cs
-C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Views\About\Index.cshtml.g.cs
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Views\Blog\Index.cshtml.g.cs
@@ -89,3 +88,7 @@ C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\bin\Debug\netcoreapp3.1\BusinessLay
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\bin\Debug\netcoreapp3.1\BusinessLayer.exe
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\bin\Debug\netcoreapp3.1\BusinessLayer.dll
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\bin\Debug\netcoreapp3.1\BusinessLayer.pdb
+C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Index.cshtml.g.cs
+C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
+C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
+C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Create.cshtml.g.cs

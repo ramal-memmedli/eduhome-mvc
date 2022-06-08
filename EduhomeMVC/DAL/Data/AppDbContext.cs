@@ -11,5 +11,6 @@ namespace DAL.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
 
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Image> Images { get; set; }
     }
 }

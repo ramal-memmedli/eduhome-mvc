@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace EduhomeMVC.Migrations
+namespace BusinessLayer.Migrations
 {
     public partial class InitialMigration : Migration
     {

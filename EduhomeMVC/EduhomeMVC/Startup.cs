@@ -28,8 +28,15 @@ namespace EduhomeMVC
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<ISliderService, SliderRepository>();
+            services.AddScoped<IImageService, ImageRepository>();
+
             services.AddControllersWithViews();
-            services.AddSingleton<ISliderService, SliderRepository>();
+            
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(_configuration.GetConnectionString("Default"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

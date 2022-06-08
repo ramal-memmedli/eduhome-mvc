@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace EduhomeMVC.Migrations
+namespace BusinessLayer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220607130056_InitialMigration")]
+    [Migration("20220608144211_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

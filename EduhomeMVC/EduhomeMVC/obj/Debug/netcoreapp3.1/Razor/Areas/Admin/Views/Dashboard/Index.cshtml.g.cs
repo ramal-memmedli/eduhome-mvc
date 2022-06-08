@@ -12,7 +12,22 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#nullable restore
+#line 3 "C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\Areas\Admin\Views\_ViewImports.cshtml"
+using DAL.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\Areas\Admin\Views\_ViewImports.cshtml"
+using EduhomeMVC.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f8976ee806691153d5a29335ac66e0618bea694c", @"/Areas/Admin/Views/Dashboard/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a52d1cce4364535ee4dd96a0e071262b03cdbdcf", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Admin_Views_Dashboard_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable

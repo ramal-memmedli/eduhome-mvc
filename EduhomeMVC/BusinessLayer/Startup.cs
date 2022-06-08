@@ -30,11 +30,9 @@ namespace BusinessLayer
             {
                 options.UseSqlServer(_configuration.GetConnectionString("Default"), b =>
                 {
-                    b.MigrationsAssembly("DAL");
+                    b.MigrationsAssembly("BusinessLayer");
                 });
             });
-            services.AddHttpContextAccessor();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +44,14 @@ namespace BusinessLayer
             }
 
             app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello World!");
+                });
+            });
         }
     }
 }

@@ -193,6 +193,9 @@
             "projectReferences": {
               "C:\\Users\\Ramal\\Desktop\\EduhomeMVC\\BusinessLayer\\BusinessLayer.csproj": {
                 "projectPath": "C:\\Users\\Ramal\\Desktop\\EduhomeMVC\\BusinessLayer\\BusinessLayer.csproj"
+              },
+              "C:\\Users\\Ramal\\Desktop\\EduhomeMVC\\DAL\\DAL.csproj": {
+                "projectPath": "C:\\Users\\Ramal\\Desktop\\EduhomeMVC\\DAL\\DAL.csproj"
               }
             }
           }

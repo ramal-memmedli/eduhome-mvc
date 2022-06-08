@@ -14,7 +14,8 @@ namespace DAL.Models
         public string Title { get; set; }
         [MaxLength(255)]
         public string Body { get; set; }
-        public string ImageUrl { get; set; }
+        public int ImageId { get; set; }
+        public Image Image { get; set; }
         [NotMapped]
         public IFormFile ImageFile { get; set; }
     }

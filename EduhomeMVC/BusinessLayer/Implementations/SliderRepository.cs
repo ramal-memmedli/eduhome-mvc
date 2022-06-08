@@ -25,7 +25,9 @@ namespace BusinessLayer.Implementations
                 throw new ArgumentNullException();
             }
 
-            Slider slider = await _context.Sliders.Where(n => !n.IsDeleted && n.Id == id).FirstOrDefaultAsync();
+            Slider slider = await _context.Sliders.Where(n => !n.IsDeleted && n.Id == id)
+                                                  .Include(n => n.Image)
+                                                  .FirstOrDefaultAsync();
 
             if (slider is null)
             {
@@ -37,7 +39,9 @@ namespace BusinessLayer.Implementations
 
         public async Task<List<Slider>> GetAll()
         {
-            List<Slider> sliders = await _context.Sliders.Where(n => !n.IsDeleted).ToListAsync();
+            List<Slider> sliders = await _context.Sliders.Where(n => !n.IsDeleted)
+                                                         .Include(n => n.Image)
+                                                         .ToListAsync();
 
             if (sliders is null)
             {
@@ -55,6 +59,7 @@ namespace BusinessLayer.Implementations
             }
 
             entity.CreatedDate = DateTime.Now;
+            entity.IsDeleted = false;
 
             await _context.Sliders.AddAsync(entity);
             await _context.SaveChangesAsync();
