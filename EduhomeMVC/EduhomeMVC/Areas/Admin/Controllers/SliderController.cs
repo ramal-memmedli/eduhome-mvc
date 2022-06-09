@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Services;
+using Common.Helpers;
 using DAL.Models;
 using EduhomeMVC.ViewModels;
 using Microsoft.AspNetCore.Hosting;
@@ -28,11 +29,15 @@ namespace EduhomeMVC.Areas.Admin.Controllers
         // GET: SliderController
         public async Task<IActionResult> Index()
         {
-            List<Slider> sliders = new List<Slider>();
+            List<SliderDetails> slidersDetails = new List<SliderDetails>();
 
             try
             {
-                sliders = await _sliderService.GetAll();
+                List<Slider> sliders = await _sliderService.GetAll();
+                foreach (Slider slider in sliders)
+                {
+                    slidersDetails.Add(MapSliderDetails(slider));
+                }
             }
             catch (Exception ex)
             {
@@ -43,17 +48,18 @@ namespace EduhomeMVC.Areas.Admin.Controllers
                 });
             }
 
-            return View(sliders);
+            return View(slidersDetails);
         }
 
         // GET: SliderController/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            Slider slider = new Slider();
 
+            SliderDetails sliderDetails;
             try
             {
-                slider = await _sliderService.Get(id);
+                Slider slider = await _sliderService.Get(id);
+                sliderDetails = MapSliderDetails(slider);
             }
             catch (Exception ex)
             {
@@ -64,12 +70,22 @@ namespace EduhomeMVC.Areas.Admin.Controllers
                 });
             }
 
-            return View(slider);
+            return View(sliderDetails);
         }
 
         // GET: SliderController/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            List<Slider> currentSliders = await _sliderService.GetAll();
+
+            if (currentSliders.Count >= 10)
+            {
+                return Json(new
+                {
+                    status = 405,
+                    message = "Allowed slider count is 10."
+                });
+            }
             return View();
         }
 
@@ -105,21 +121,7 @@ namespace EduhomeMVC.Areas.Admin.Controllers
                 return View(data);
             }
 
-            string fileName = data.ImageFile.FileName;
-
-            if(fileName.Length > 219)
-            {
-                fileName.Substring(fileName.Length - 219, 219);
-            }
-
-            fileName = Guid.NewGuid().ToString() + fileName;
-
-            string path = Path.Combine(_environment.WebRootPath, "assets", "uploads", "images", "sliders", fileName);
-
-            using(FileStream fileStream = new FileStream(path, FileMode.Create))
-            {
-                await data.ImageFile.CopyToAsync(fileStream);
-            }
+            string fileName = await data.ImageFile.CreateImage(_environment.WebRootPath);
 
             Image image = new Image();
             image.Name = fileName;
@@ -159,31 +161,31 @@ namespace EduhomeMVC.Areas.Admin.Controllers
         // GET: SliderController/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            Slider slider = new Slider();
-
-            try
-            {
-                slider = await _sliderService.Get(id);
-            }
-            catch (Exception ex)
-            {
-                return Json(new
-                {
-                    status = 404,
-                    message = ex.Message
-                });
-            }
-
-            return View(slider);
+            Slider slider = await _sliderService.Get(id);
+            SliderCreate sliderVM = MapSliderCreate(slider);
+            return View(sliderVM);
         }
 
         // POST: SliderController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int? id, Slider slider)
+        public async Task<IActionResult> Edit(int? id, SliderCreate data)
         {
             try
             {
+                Slider slider = await _sliderService.Get(id);
+                slider.Title = data.Title;
+                slider.Body = data.Body;
+
+                if(data.ImageFile != null)
+                {
+                    string fileName = await data.ImageFile.CreateImage(_environment.WebRootPath);
+
+                    slider.Image.Name = fileName;
+
+                    await _imageService.Update(slider.Image);
+                }
+
                 await _sliderService.Update(slider);
                 return RedirectToAction(nameof(Index));
             }
@@ -204,8 +206,8 @@ namespace EduhomeMVC.Areas.Admin.Controllers
         }
 
         // POST: SliderController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete(int? id)
         {
             try
@@ -221,6 +223,44 @@ namespace EduhomeMVC.Areas.Admin.Controllers
                     message = ex.Message
                 });
             }
+        }
+
+        private SliderDetails MapSliderDetails(Slider slider)
+        {
+            SliderDetails sliderDetails = new SliderDetails();
+
+            sliderDetails.Id = slider.Id;
+            sliderDetails.Title = slider.Title;
+            sliderDetails.Body = slider.Body;
+            sliderDetails.ImageUrl = slider.Image.Name;
+            sliderDetails.IsActive = slider.IsActive;
+
+            return sliderDetails;
+        }
+
+        private SliderCreate MapSliderCreate(Slider slider)
+        {
+            SliderCreate sliderCreate = new SliderCreate();
+            sliderCreate.Title = slider.Title;
+            sliderCreate.Body = slider.Body;
+            return sliderCreate;
+        }
+
+        public async Task<IActionResult> ChangeStatus(int? id)
+        {
+            try
+            {
+                Slider slider = await _sliderService.Get(id);
+                slider.IsActive = !slider.IsActive;
+                await _sliderService.Update(slider);
+            }
+            catch (Exception ex)
+            {
+
+                ModelState.AddModelError("", ex.Message);
+            }
+
+            return RedirectToAction(actionName: nameof(Details), new {id});
         }
     }
 }

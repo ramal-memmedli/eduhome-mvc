@@ -92,3 +92,7 @@ C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Create.cshtml.g.cs
+C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Details.cshtml.g.cs
+C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Slider\Edit.cshtml.g.cs
+C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\bin\Debug\netcoreapp3.1\Common.dll
+C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\bin\Debug\netcoreapp3.1\Common.pdb

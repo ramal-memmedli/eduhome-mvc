@@ -1,0 +1,10 @@
+C:\Users\Ramal\Desktop\EduhomeMVC\Common\bin\Debug\netcoreapp3.1\Common.deps.json
+C:\Users\Ramal\Desktop\EduhomeMVC\Common\bin\Debug\netcoreapp3.1\Common.dll
+C:\Users\Ramal\Desktop\EduhomeMVC\Common\bin\Debug\netcoreapp3.1\Common.pdb
+C:\Users\Ramal\Desktop\EduhomeMVC\Common\obj\Debug\netcoreapp3.1\Common.csproj.AssemblyReference.cache
+C:\Users\Ramal\Desktop\EduhomeMVC\Common\obj\Debug\netcoreapp3.1\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ramal\Desktop\EduhomeMVC\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfoInputs.cache
+C:\Users\Ramal\Desktop\EduhomeMVC\Common\obj\Debug\netcoreapp3.1\Common.AssemblyInfo.cs
+C:\Users\Ramal\Desktop\EduhomeMVC\Common\obj\Debug\netcoreapp3.1\Common.csproj.CoreCompileInputs.cache
+C:\Users\Ramal\Desktop\EduhomeMVC\Common\obj\Debug\netcoreapp3.1\Common.dll
+C:\Users\Ramal\Desktop\EduhomeMVC\Common\obj\Debug\netcoreapp3.1\Common.pdb

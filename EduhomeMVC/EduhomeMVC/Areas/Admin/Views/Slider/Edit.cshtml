@@ -1,0 +1,24 @@
+﻿@model SliderCreate
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Edit slider</h4>
+        <form method="post" enctype="multipart/form-data" class="forms-sample">
+            <div class="form-group">
+                <label asp-for="@Model.Title">Title</label>
+                <input asp-for="@Model.Title" class="form-control" placeholder="Title">
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Body">Body</label>
+                <input asp-for="@Model.Body" class="form-control" placeholder="Body">
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.ImageFile">Slider image</label>
+                <input asp-for="@Model.ImageFile" accept="image/*" class="form-control">
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+            <a asp-area="admin" asp-controller="slider" asp-action="index" class="btn btn-light">Cancel</a>
+        </form>
+    </div>
+</div>

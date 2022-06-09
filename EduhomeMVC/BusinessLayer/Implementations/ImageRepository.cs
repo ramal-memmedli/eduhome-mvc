@@ -51,14 +51,30 @@ namespace BusinessLayer.Implementations
             await _context.SaveChangesAsync();
         }
 
-        public Task Update(Image entity)
+        public async Task Update(Image entity)
         {
-            throw new System.NotImplementedException();
+            if(entity is null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            _context.Images.Update(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public Task Delete(int? id)
+        public async Task Delete(int? id)
         {
-            throw new System.NotImplementedException();
+            if(id is null)
+            {
+                throw new ArgumentNullException();
+            }
+            Image image = await Get(id);
+            if(image is null)
+            {
+                throw new NullReferenceException();
+            }
+            _context.Images.Remove(image);
+            await _context.SaveChangesAsync();
         }
     }
 }

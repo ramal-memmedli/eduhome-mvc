@@ -1608,6 +1608,19 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http": "2.2.2"
+        },
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -5971,6 +5984,11 @@
       "path": "../BusinessLayer/BusinessLayer.csproj",
       "msbuildProject": "../BusinessLayer/BusinessLayer.csproj"
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "DAL/1.0.0": {
       "type": "project",
       "path": "../DAL/DAL.csproj",
@@ -5980,6 +5998,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "BusinessLayer >= 1.0.0",
+      "Common >= 1.0.0",
       "DAL >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.25",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.25",
@@ -6020,6 +6039,9 @@
           "projectReferences": {
             "C:\\Users\\Ramal\\Desktop\\EduhomeMVC\\BusinessLayer\\BusinessLayer.csproj": {
               "projectPath": "C:\\Users\\Ramal\\Desktop\\EduhomeMVC\\BusinessLayer\\BusinessLayer.csproj"
+            },
+            "C:\\Users\\Ramal\\Desktop\\EduhomeMVC\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\Ramal\\Desktop\\EduhomeMVC\\Common\\Common.csproj"
             },
             "C:\\Users\\Ramal\\Desktop\\EduhomeMVC\\DAL\\DAL.csproj": {
               "projectPath": "C:\\Users\\Ramal\\Desktop\\EduhomeMVC\\DAL\\DAL.csproj"

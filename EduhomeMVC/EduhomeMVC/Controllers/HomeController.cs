@@ -1,14 +1,29 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BusinessLayer.Services;
+using DAL.Models;
+using EduhomeMVC.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace EduhomeMVC.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: HomeController
-        public ActionResult Index()
+        private readonly ISliderService _sliderService;
+
+        public HomeController(ISliderService sliderService)
         {
-            return View();
+            _sliderService = sliderService;
+        }
+
+        // GET: HomeController
+        public async Task<IActionResult> Index()
+        {
+            HomeVM homeVM = new HomeVM();
+            homeVM.Sliders = await _sliderService.GetAll();
+
+            return View(homeVM);
         }
 
         // GET: HomeController/Details/5

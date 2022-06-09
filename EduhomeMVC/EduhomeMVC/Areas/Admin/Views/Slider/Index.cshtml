@@ -1,4 +1,4 @@
-﻿@model List<Slider>
+﻿@model List<SliderDetails>
 
 <div class="d-flex justify-content-between">
     <a asp-area="admin" asp-controller="dashboard" asp-action="index" class="btn btn-primary mb-4">Go back</a>
@@ -26,11 +26,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (Slider slider in Model)
+                    @foreach (SliderDetails slider in Model)
                     {
                         <tr>
                             <td class="py-1">
-                                <img src="~/assets/uploads/images/sliders/@slider.Image.Name">
+                                <img src="~/assets/uploads/images/sliders/@slider.ImageUrl">
                             </td>
                             <td>
                                 @slider.Title
@@ -39,9 +39,9 @@
                                 @slider.Body
                             </td>
                             <td>
-                                <a asp-area="admin" asp-controller="slider" asp-action="details" class="btn btn-primary">Details</a>
-                                <a asp-area="admin" asp-controller="slider" asp-action="update" class="btn btn-warning">Update</a>
-                                <a asp-area="admin" asp-controller="slider" asp-action="delete" class="btn btn-danger">Delete</a>
+                                <a asp-area="admin" asp-controller="slider" asp-action="details" asp-route-id="@slider.Id" class="btn btn-primary">Details</a>
+                                <a asp-area="admin" asp-controller="slider" asp-action="edit" asp-route-id="@slider.Id" class="btn btn-warning">Update</a>
+                                <a asp-area="admin" asp-controller="slider" asp-action="delete" asp-route-id="@slider.Id" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     }

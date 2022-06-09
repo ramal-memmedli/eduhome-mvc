@@ -87,9 +87,13 @@ namespace BusinessLayer.Implementations
 
             Slider slider = await Get(id);
 
-            slider.IsDeleted = true;
+            if(slider is null)
+            {
+                throw new NullReferenceException();
+            }
 
-            await Update(slider);
+            _context.Sliders.Remove(slider);
+            await _context.SaveChangesAsync();
         }
     }
 }

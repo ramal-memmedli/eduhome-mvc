@@ -1,0 +1,55 @@
+﻿@model SliderDetails
+
+<div class="d-flex justify-content-between">
+    <a asp-area="admin" asp-controller="slider" asp-action="index" class="btn btn-primary mb-4">Go back</a>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Slider details</h4>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Image
+                        </th>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Body
+                        </th>
+                        <th>
+                            Settings
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td class="py-1">
+                                <img src="~/assets/uploads/images/sliders/@Model.ImageUrl">
+                            </td>
+                            <td>
+                                @Model.Title
+                            </td>
+                            <td>
+                                @Model.Body
+                            </td>
+                            <td>
+                                <a asp-area="admin" asp-controller="slider" asp-action="edit"  asp-route-id="@Model.Id" class="btn btn-warning">Update</a>
+                                <a asp-area="admin" asp-controller="slider" asp-action="delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+                                @if(Model.IsActive)
+                                {
+                                    <a class="btn btn-danger" asp-area="admin" asp-controller="slider" asp-action="ChangeStatus" asp-route-id="@Model.Id">Deactivate</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-success" asp-area="admin" asp-controller="slider" asp-action="ChangeStatus" asp-route-id="@Model.Id">Activate</a>
+                                }
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -16,7 +16,6 @@ namespace DAL.Models
         public string Body { get; set; }
         public int ImageId { get; set; }
         public Image Image { get; set; }
-        [NotMapped]
-        public IFormFile ImageFile { get; set; }
+        public bool IsActive { get; set; }
     }
 }

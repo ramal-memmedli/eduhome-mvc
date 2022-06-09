@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using DAL.Base;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace BusinessLayer.Base
 {
-    public interface IBaseService<TEntity>
+    public interface IBaseService<TEntity> where TEntity : class, IEntity, new()
     {
         Task<TEntity> Get(int? id);
         Task<List<TEntity>> GetAll();
