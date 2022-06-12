@@ -12,5 +12,7 @@ namespace DAL.Data
 
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Image> Images { get; set; }
+        public DbSet<Parallax> Parallaxes { get; set; }
+        public DbSet<ParallaxImage> ParallaxImages { get; set; }
     }
 }

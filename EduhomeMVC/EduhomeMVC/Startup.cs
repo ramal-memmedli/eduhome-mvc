@@ -30,6 +30,7 @@ namespace EduhomeMVC
         {
             services.AddScoped<ISliderService, SliderRepository>();
             services.AddScoped<IImageService, ImageRepository>();
+            services.AddScoped<IParallaxService, ParallaxRepository>();
 
             services.AddControllersWithViews();
             

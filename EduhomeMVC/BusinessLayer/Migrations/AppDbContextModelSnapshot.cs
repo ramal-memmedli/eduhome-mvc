@@ -34,6 +34,49 @@ namespace BusinessLayer.Migrations
                     b.ToTable("Images");
                 });
 
+            modelBuilder.Entity("DAL.Models.Parallax", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Body")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Parallaxes");
+                });
+
+            modelBuilder.Entity("DAL.Models.ParallaxImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ImageId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsMain")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ParallaxId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImageId");
+
+                    b.HasIndex("ParallaxId");
+
+                    b.ToTable("ParallaxImages");
+                });
+
             modelBuilder.Entity("DAL.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -69,6 +112,21 @@ namespace BusinessLayer.Migrations
                     b.HasIndex("ImageId");
 
                     b.ToTable("Sliders");
+                });
+
+            modelBuilder.Entity("DAL.Models.ParallaxImage", b =>
+                {
+                    b.HasOne("DAL.Models.Image", "Image")
+                        .WithMany("ParallaxImages")
+                        .HasForeignKey("ImageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DAL.Models.Parallax", "Parallax")
+                        .WithMany("ParallaxImages")
+                        .HasForeignKey("ParallaxId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("DAL.Models.Slider", b =>

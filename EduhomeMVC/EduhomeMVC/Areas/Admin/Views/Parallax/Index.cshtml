@@ -1,0 +1,41 @@
+﻿@model ParallaxGetVM
+
+<div class="d-flex justify-content-between">
+    <a asp-area="admin" asp-controller="dashboard" asp-action="index" class="btn btn-primary mb-4">Go back</a>
+    <a asp-area="admin" asp-controller="parallax" asp-action="edit" asp-route-id="@Model.Id" class="btn btn-warning mb-4">Update</a>
+</div>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Parallax</h4>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Image
+                        </th>
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Body
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td class="py-1">
+                                <img src="~/assets/uploads/images/parallax/@Model.ImageUrl">
+                            </td>
+                            <td>
+                                @Model.Title
+                            </td>
+                            <td>
+                                @Model.Body
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
