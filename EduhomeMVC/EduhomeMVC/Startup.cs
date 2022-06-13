@@ -1,9 +1,11 @@
 using BusinessLayer.Implementations;
 using BusinessLayer.Services;
 using DAL.Data;
+using DAL.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,12 +34,21 @@ namespace EduhomeMVC
             services.AddScoped<IImageService, ImageRepository>();
             services.AddScoped<IParallaxService, ParallaxRepository>();
 
+            services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 8;
+                options.Lockout.MaxFailedAccessAttempts = 3;
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+
             services.AddControllersWithViews();
             
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(_configuration.GetConnectionString("Default"));
             });
+
+            services.AddAuthentication();
+            services.AddAuthorization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +62,9 @@ namespace EduhomeMVC
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

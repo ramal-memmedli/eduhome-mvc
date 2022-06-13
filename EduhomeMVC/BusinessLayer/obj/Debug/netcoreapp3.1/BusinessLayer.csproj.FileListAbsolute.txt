@@ -60,3 +60,8 @@ C:\Users\Ramal\Desktop\EduhomeMVC\BusinessLayer\obj\Debug\netcoreapp3.1\Business
 C:\Users\Ramal\Desktop\EduhomeMVC\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.pdb
 C:\Users\Ramal\Desktop\EduhomeMVC\BusinessLayer\obj\Debug\netcoreapp3.1\BusinessLayer.genruntimeconfig.cache
 C:\Users\Ramal\Desktop\EduhomeMVC\BusinessLayer\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Ramal\Desktop\EduhomeMVC\BusinessLayer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Ramal\Desktop\EduhomeMVC\BusinessLayer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Ramal\Desktop\EduhomeMVC\BusinessLayer\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Ramal\Desktop\EduhomeMVC\BusinessLayer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Ramal\Desktop\EduhomeMVC\BusinessLayer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll

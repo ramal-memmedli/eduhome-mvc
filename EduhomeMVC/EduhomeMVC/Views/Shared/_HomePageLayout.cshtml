@@ -84,7 +84,17 @@
                                                 </ul>
                                             </li>
                                             <li><a asp-controller="contact" asp-action="index">Contact</a></li>
-                                            @*<li><a href="#">Buy Now</a>*@
+                                            
+                                        @if(User.Identity.IsAuthenticated)
+                                        {
+                                            <li><a asp-controller="account" asp-action="profile">@User.Identity.Name</a></li>
+                                            <li><a asp-controller="account" asp-action="logout">Log out</a></li>
+                                        }else
+                                        {
+                                            <li><a asp-controller="account" asp-action="register">Register</a></li>
+                                            <li><a asp-controller="account" asp-action="login">Log in</a></li>
+                                        }
+
                                         </ul>
                                     </nav>
                                 </div>
