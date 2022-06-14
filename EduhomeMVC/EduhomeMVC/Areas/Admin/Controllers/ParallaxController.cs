@@ -10,10 +10,12 @@ using DAL.Models;
 using BusinessLayer.Services;
 using EduhomeMVC.ViewModels;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EduhomeMVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class ParallaxController : Controller
     {
         private readonly IParallaxService _parallaxService;

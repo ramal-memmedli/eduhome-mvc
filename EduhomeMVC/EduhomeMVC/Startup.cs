@@ -34,11 +34,14 @@ namespace EduhomeMVC
             services.AddScoped<IImageService, ImageRepository>();
             services.AddScoped<IParallaxService, ParallaxRepository>();
 
-            services.AddIdentity<AppUser, IdentityRole>(options =>
+            services.AddIdentity<AppUser, IdentityRole>().AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+
+            services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequiredLength = 8;
                 options.Lockout.MaxFailedAccessAttempts = 3;
-            }).AddDefaultTokenProviders().AddEntityFrameworkStores<AppDbContext>();
+                options.User.RequireUniqueEmail = true;
+            });
 
             services.AddControllersWithViews();
             

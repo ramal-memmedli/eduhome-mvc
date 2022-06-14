@@ -180,3 +180,5 @@ C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\bin\Debug\netcoreapp3.1\Microsoft.A
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Ramal\Desktop\EduhomeMVC\EduhomeMVC\obj\Debug\netcoreapp3.1\Razor\Views\Account\EmailConfirmationPage.cshtml.g.cs
